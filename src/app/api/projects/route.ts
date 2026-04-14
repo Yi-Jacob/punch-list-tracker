@@ -48,6 +48,7 @@ export async function POST(request: NextRequest) {
     .single();
 
   if (error) {
+    console.error("[POST /api/projects] Supabase error:", error);
     return Response.json({ error: error.message }, { status: 500 });
   }
 
